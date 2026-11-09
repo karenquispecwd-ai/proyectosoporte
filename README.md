@@ -64,13 +64,16 @@ No se utiliza una conexión real a Google Sheets o a bases de datos instituciona
 
 ## 5. Ejecución en Google Colab
 
-1. Abre `Agente_Soporte_Tecnico_Multisede.ipynb` en [Google Colab](https://colab.research.google.com/).
-2. Configura el secreto `GROQ_API_KEY` en el panel **Secretos** y permite el acceso al notebook.
-3. Ejecuta las celdas en orden. Se instalarán dependencias desde el propio notebook.
-4. Observa las consultas, la pausa de aprobación humana, la decisión `reject` y la evaluación final.
-5. Conserva las salidas visibles antes de compartir el enlace con permiso de lectura.
+El proyecto se ejecuta en Google Colab con Python, LangChain y la API de Groq.
 
-**Seguridad:** nunca escribas ni subas la API key a GitHub. El código solo la carga mediante `userdata.get("GROQ_API_KEY")`.
+1. Abrir `Agente_Soporte_Tecnico_Multisede.ipynb` en [Google Colab](https://colab.research.google.com/).
+2. Configurar `GROQ_API_KEY` en la sección de secretos y habilitar el acceso al notebook.
+3. Ejecutar las celdas en orden para cargar las librerías, el inventario de prueba y el agente.
+4. Consultar los equipos registrados por sede y sus antecedentes de mantenimiento.
+5. Ejecutar una solicitud de baja de equipo para comprobar el control de aprobación humana y la opción `reject`.
+6. Ejecutar los cinco casos de prueba y obtener el porcentaje de aciertos.
+
+El inventario contiene datos simulados de las sedes La Paz y El Alto. Las bajas autorizadas se registran únicamente en una lista temporal, sin modificar información institucional. La clave de Groq se carga desde los secretos de Colab y no se incluye en el repositorio.
 
 ## 6. Evaluación de cinco casos
 
